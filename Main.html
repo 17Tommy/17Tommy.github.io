@@ -10,18 +10,25 @@ p{color:blue}
 <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
 <body>
-<h1>Unity3D开发日志</h1>
+<h1 id="myTitle">Unity3D开发日志</h1>
 <p>
-<img src="img/woman.jpg" alt="Beautiful Sister" width="64" height="64">
+    <!-- <img src="img/woman.jpg" alt="Beautiful Sister" width="64" height="64"> -->
 </p>
 <h2><img src="img/pandas.jpg" alt="Beautiful Sister" width="64" height="64">TommyLi</h2>
 <h3>1996-10-17</h3>
 <p>我的第一篇博客<br>今天是第一天写博客<br>为了记录Unity3d开发日记与知识点记录总结</p>
-
+<!-- <iframe src="window1.html" width="500" height="400" frameborder="1"></iframe><br> -->
 <b>注释：</b>记录标签注释
 <pre>
-
+    
 </pre>
+<canvas id="myCanvas" width="1920" height="100" style="border: 1px solid #ff3e3e;"></canvas><br>
+<script>
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    ctx.font="30px Arial";
+    ctx.strokeText("开发日记",10,50);
+</script>
 <address>
 Written by <a href="https://17tommy.github.io/Main" target="_blank">TommyLi</a>.<br>
 访问我的主页：TommyLi.com<br>

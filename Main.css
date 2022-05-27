@@ -1,13 +1,18 @@
 body{
+	
 	background-color:#d0e4fe
 }
 p
 {
 	color:red;
-	text-align=center;
+	text-align:left;
 }
 h1
 {
 	color:orange;
-	text-align=center;
+	text-align:center;
+}
+#myTitle{
+	text-align: center;
+	color: orange;
 }
