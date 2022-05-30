@@ -9,6 +9,7 @@ h1{color:red;}
 p{color:blue}
 </style> -->
     <link rel="stylesheet" type="text/css" href="Main.css">
+    <script src="firstJs.js"></script>
 </head>
 
 
@@ -28,12 +29,16 @@ p{color:blue}
     <div class="row">
         <div class="leftcolumn">
             <div class="card" style="border:2px solid rgb(118, 118, 118);">
-                <img src="img/pandas.jpg" style="border-radius: 4px;border-width: 2px ;box-shadow: 5px 5px 5px rgb(179, 179, 179);" alt="Beautiful Sister" width="64" height="64">
+                <img src="img/pandas.jpg"
+                    style="border-radius: 4px;border-width: 2px ;box-shadow: 5px 5px 5px rgb(179, 179, 179);"
+                    alt="Beautiful Sister" width="64" height="64">
                 <h2>TommyLi</h2>
                 <abbr title="和光同尘">座右铭</abbr>
                 <p class="date">1996-09-12</p>
-                <p>我的第一篇博客<br>今天是第一天写博客<br>为了记录Unity3d开发日记与知识点记录总结</p>
-                <b>注释：</b>记录标签注释
+                <p>为了记录Unity3d开发日记与知识点总结</p>
+                <b>MyLife：</b>为了爱我和我爱的人
+                <p id="change">介绍</p>
+                <button type="button" onclick="myFunction()">修改介绍</button>
             </div>
             <div class="card">
                 <h2>最近文章</h2>
@@ -67,8 +72,6 @@ p{color:blue}
 
     </div>
 
-
-    <!-- <iframe src="window1.html" width="500" height="400" frameborder="1"></iframe><br> -->
 
 </body>
 
