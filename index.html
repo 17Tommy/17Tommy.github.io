@@ -1,16 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>主页</title>
-    </head>
-    <body>
-        <div>
-            <h1>测试首页</h1>
+
+<head>
+    <meta charset="utf-8">
+    <title>个人博客</title>
+    <!-- <style type="text/css">
+h1{color:red;}
+p{color:blue}
+</style> -->
+    <link rel="stylesheet" type="text/css" href="Main.css">
+    <script src="firstJs.js"></script>
+</head>
+
+
+<body>
+    <div class="header">
+        <h1>Where is ?</h1>
+        <p style="color:white ; font-style:italic;">当代躺平的一条咸鱼</p>
+    </div>
+    <div class="topnav">
+        <a href="Home.html" target="_blank">主页</a>
+        <a href="Unity3D.html" target="_blank">Unity3D</a>
+        <a href="SeverDeveloper.html" target="_blank">后端开发</a>
+        <a style="float:right" href="About.html">关于</a>
+        
+    </div>
+
+    <!-- <img src="img/woman.jpg" alt="Beautiful Sister" width="64" height="64"> -->
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card" style="border:2px solid rgb(118, 118, 118);">
+                <img src="img/pandas.jpg"
+                    style="border-radius: 4px;border-width: 2px ;box-shadow: 5px 5px 5px rgb(179, 179, 179);"
+                    alt="Beautiful Sister" width="64" height="64">
+                <h2>TommyLi</h2>
+                <abbr title="和光同尘">座右铭</abbr>
+                <p class="date">1996-09-12</p>
+                <p>为了记录Unity3d开发日记与知识点总结</p>
+                <b>MyLife：</b>为了爱我和我爱的人
+                <p id="change">介绍</p>
+                <button type="button" onclick="myFunction()">修改介绍</button>
+                <button type="button" onclick="openWin()" >写博客</button>
+            </div>
+            <div class="card">
+                <h2>最近文章</h2>
+                <div class="fakeing" style="height: 100px;">图片</div>
+                <p>文章标题</p>
+            </div>
         </div>
-        <div>
-            <h2>修改名称</h2>
+
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>文章标题1</h2>
+                <h5>2022-5-28</h5>
+                <div class="fakeing" style="height: 200px ;">图片</div>
+                <p>文章1</p>
+            </div>
+            <div class="card">
+                <h2>文章标题2</h2>
+                <h5>2022-5-28</h5>
+                <div class="fakeing" style="height: 200px ;">图片</div>
+                <p>文章2</p>
+            </div>
         </div>
-    </body>
+    </div>
+
+    <div class="footer">
+        <address>
+            Written by TommyLi.<br>
+            微博主页：<a href="Home.html" target="_blank">TommyLi.com</a><br>
+            China<br>
+        </address>
+
+    </div>
+
+
+</body>
 
 </html>
