@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | 新能源汽车仿真实训平台</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+</head>
+<script>
+  function getQueryVariable(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURI(r[2]); return null;
+  }
+
+  var userName = getQueryVariable('userName');
+  var fileName = getQueryVariable('fileName');
+  var ABpath = getQueryVariable('ABpath');
+  if (userName) {
+    sessionStorage.setItem('userName', userName)
+  }
+  if (fileName) {
+    sessionStorage.setItem('fileName', fileName)
+  }
+  if (ABpath) {
+    sessionStorage.setItem('ABpath', ABpath)
+  }
+  setTimeout(() => {
+    var url = window.location.href;
+
+    if (url.indexOf("?") != -1) {
+      url = url.replace(/(\?|#)[^'"]*/, '');
+      window.history.pushState({}, 0, url);
+    }
+
+  }, 300)
+
+</script>
+
+<body>
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas"></canvas>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty" class="remainBox">
+        <div id="unity-progress-bar-full"></div>
+        <span id="remainText"></span>
+      </div>
+    </div>
+    <div id="unity-footer">
+      <div id="unity-webgl-logo"></div>
+      <div id="unity-fullscreen-button"></div>
+      <div id="unity-build-title">新能源汽车仿真实训平台</div>
+    </div>
+    <div class="foot">
+      <div class="topUl">
+        <ul class="footUl item">
+          <li class="blockLi">W</li>
+          <li class="inlineLi">A</li>
+          <li class="inlineLi">S</li>
+          <li class="inlineLi">D</li>
+        </ul>
+        <p class="ptext">上下左右箭头 移动</p>
+      </div>
+
+      <div class="item itemBtn">
+        <img class="mouseIcon" src="./TemplateData/mouse-left-click.png" alt="">
+        <span class="btn">确认</span>
+      </div>
+      <div class="item itemBtn">
+        <img class="mouseIcon" src="./TemplateData/mouse-right-click.png" alt="">
+        <span class="btn">旋转视角</span>
+      </div>
+      <div class="item itemBtn">
+        <img class="mouseIcon" src="./TemplateData/mouse-scr-click.png" alt="">
+        <span class="btn">放大缩小<span>
+      </div>
+    </div>
+  </div>
+  <div class="table">
+    <h6>电脑配置要求</h6>
+    <table>
+      <tr>
+        <th colspan="2">最低配置</th>
+      </tr>
+      <tr>
+        <td class="blueTd">系统</td>
+        <td>Windows 7</td>
+      </tr>
+      <tr>
+        <td class="blueTd">CPU</td>
+        <td>i3 6100</td>
+      </tr>
+      <tr>
+        <td class="blueTd">内存</td>
+        <td>8 GB</td>
+      </tr>
+      <tr>
+        <td class="blueTd">硬盘</td>
+        <td>需要500M可用空间</td>
+      </tr>
+      <tr>
+        <td class="blueTd">显卡</td>
+        <td>GTX750</td>
+      </tr>
+      <tr>
+        <td class="blueTd">DX</td>
+        <td>DirectX 11</td>
+      </tr>
+      <tr>
+        <th colspan="2">推荐配置</th>
+      </tr>
+      <tr>
+        <td class="blueTd">系统</td>
+        <td>Windows 10</td>
+      </tr>
+      <tr>
+        <td class="blueTd">CPU</td>
+        <td>i3 12100</td>
+      </tr>
+      <tr>
+        <td class="blueTd">内存</td>
+        <td>16 GB</td>
+      </tr>
+      <tr>
+        <td class="blueTd">硬盘</td>
+        <td>需要500M可用空间</td>
+      </tr>
+      <tr>
+        <td class="blueTd">显卡</td>
+        <td>GTX2060</td>
+      </tr>
+      <tr>
+        <td class="blueTd">DX</td>
+        <td>DirectX 12</td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/WEBGL-EA888.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/WEBGL-EA888.data",
+      frameworkUrl: buildUrl + "/WEBGL-EA888.framework.js",
+      codeUrl: buildUrl + "/WEBGL-EA888.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+      companyName: "成都融畅易和科技有限公司",
+      productName: "新能源汽车仿真实训平台",
+      productVersion: "0.1",
+    };
+
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var remainText = document.querySelector("#remainText");
+    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    } else {
+      canvas.style.width = "1280px";
+      canvas.style.height = "720px";
+    }
+    loadingBar.style.display = "block";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        var num = Math.round(100 - (100 * progress))
+        remainText.innerHTML = `剩余${num}%`
+        progressBarFull.style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        loadingBar.style.display = "none";
+        fullscreenButton.onclick = () => {
+          unityInstance.SetFullscreen(1);
+        };
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+
+</html>
