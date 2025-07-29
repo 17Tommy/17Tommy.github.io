@@ -1,0 +1,11 @@
+.row{
+    display: flex;
+}
+h1{
+    text-align: center;
+    color: orange;
+}
+.header{
+    padding: 20px;
+    background-color: aquamarine;
+}
