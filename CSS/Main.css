@@ -1,22 +1,26 @@
 /* 头部空间 */
-.header {
-	
+.header {	
 	border-radius: 0;
 	text-align: center;
-	background-image: url('img/header01.png');	
-	background-size: 100% ;
-	background-repeat: no-repeat;
-	height: 600px;
 }
 
 .header h1 {
 	font-size: 50px;
-	margin-top: 100px;
+	margin: 0;
+}
+.header p {
+	font-size: 18px;
+	margin: 0;
+	color: #000000;
 }
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	background-color: #ffffff
+	background-color: #ffffff;
+	background-image: url('../img/BG.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0;
 }
 
 
@@ -43,35 +47,49 @@ a:visited{
 */
 .topnav {
 	overflow: hidden;
-	background-color: rgb(214, 226, 255);
+	background-color: #fff;
+	text-align: left;
 }
 
-.topnav a {
-	float: left;
-	display: block;
-	color: #000000;
-	text-align: center;
-	
-	padding: 14px 16px;
+.topnav a {	
+	color: #000000;	
+	padding: 10px;
 	text-decoration: none;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size: 20px;
+	
+	font-size: 16px;
+
+	font-family: Arial, "Microsoft YaHei", sans-serif; /* 设置统一字体 */
+    line-height: 1.5; /* 设置统一的行高 */
+    text-align: center; /* 设置对齐方式 */
+    display: inline-block; /* 确保元素的布局一致 */
+	
 }
+
 
 .topnav a:hover {
 	color: white;
 	background-color: #131115;
 }
-
-.row{
-	display: flex;
+.topnav input[type="text"] {
+	width: 30%;
+	padding: 10px;
+	margin: 8px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	
 }
 
 /*创建等列*/
 .leftcolumn {
 	/* float: left; */
 	width: 15%;
+	padding: 0;;
 	/* background-color: #07c6c3; */
+	margin: 0;
+}
+#myName{
+	font-size: 20px;
 }
 
 .rightcolumn{
@@ -79,7 +97,7 @@ a:visited{
 	/* background-color: #aaa; */
 	/* width: 83%; */
 	flex: 1;
-	padding-left: 20px;
+	padding-left: 5px;
 }
 
 .fakeing {
@@ -88,11 +106,19 @@ a:visited{
 	/* padding: 20px; */
 }
 .card{
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(253, 253, 253);
 	padding: 20px;
+	margin-top: 5px;
+	border-radius: 5px;
+	margin-left: 20px;
 	margin-top: 20px;
+	margin-right: 20px;
+	
 }
 
+.row{
+	display: flex;
+}
 .row::after {
 	content: "";
 	display: table;
