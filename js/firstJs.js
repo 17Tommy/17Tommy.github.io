@@ -8,5 +8,9 @@ function openWin() {
 
 }
 
-
+var user={
+    name:"张三",
+    age:20,
+    isFinite:true,
+}
 

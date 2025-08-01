@@ -1,3 +1,7 @@
+*{
+	padding: 0;
+	margin: 0;
+}
 /* 头部空间 */
 .header {	
 	border-radius: 0;
@@ -21,6 +25,8 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
 }
 
 
@@ -49,6 +55,9 @@ a:visited{
 	overflow: hidden;
 	background-color: #fff;
 	text-align: left;
+	display: flex;
+	height: 50px;
+	align-items: center;
 }
 
 .topnav a {	
@@ -67,8 +76,9 @@ a:visited{
 
 
 .topnav a:hover {
-	color: white;
-	background-color: #131115;
+	color: rgb(55, 174, 253);
+
+	
 }
 .topnav input[type="text"] {
 	width: 30%;
@@ -77,27 +87,48 @@ a:visited{
 	box-sizing: border-box;
 	border: 2px solid #ccc;
 	border-radius: 4px;
+	background-color: #fff;
+	border: #000000 solid 1px;
+}
+.topnav ul{
+	display: flex;
 	
+}
+.topnav li{
+	display: flex;
+	list-style-type: none;
 }
 
 /*创建等列*/
-.leftcolumn {
+#content .leftcolumn {
 	/* float: left; */
 	width: 15%;
 	padding: 0;;
 	/* background-color: #07c6c3; */
 	margin: 0;
+	flex: 1;
 }
 #myName{
 	font-size: 20px;
 }
+#content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 20px 200px;
+	padding: 0;
+}
 
-.rightcolumn{
+#content .rightcolumn{
 	/* float: left; */
-	/* background-color: #aaa; */
+	background-color: #ffffff;
 	/* width: 83%; */
-	flex: 1;
-	padding-left: 5px;
+	margin-left: 20px;
+	flex: 3.5;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	border-radius: 5px;
 }
 
 .fakeing {
@@ -106,14 +137,19 @@ a:visited{
 	/* padding: 20px; */
 }
 .card{
-	background-color: rgb(253, 253, 253);
+	background-color: rgb(255, 255, 255);
 	padding: 20px;
-	margin-top: 5px;
+
 	border-radius: 5px;
-	margin-left: 20px;
-	margin-top: 20px;
-	margin-right: 20px;
+	margin-bottom: 10px;
+
+}
+.contenttip{
+	background-color: #ccc;
+	border-radius: 5px;
 	
+	margin-bottom: 10px;
+	padding: 10px;
 }
 
 .row{
@@ -127,22 +163,19 @@ a:visited{
 
 .footer {
 	padding: 20px;
-	background: aliceblue;
+	background: rgba(240, 248, 255, 0.171);
 	text-align: center;
 	margin-top: 20px;
 }
-
-@media screen and (max-width:600px) {
-
-	.rightcolumn,
-	.leftcolumn {
-		width: 100%;
-		padding:0;
-	}
+.footer address{
+	color: #ffffff;
 }
-@media screen  and(max-width:400px){
-	.topnav a{
-		float: none;
-		width: 100%;
-	}
+ul {
+	list-style-type: none;
+	padding: 20px;
+	margin: 0;
+}
+ul li {
+	margin: 5px 0;
+	list-style-type: decimal;
 }
