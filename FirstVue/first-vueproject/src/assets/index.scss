@@ -1,0 +1,6 @@
+// styles/element/index.scss
+/* 只需要重写你需要的变量 */
+$--color-primary: teal;
+
+/* 引入所有样式 */
+@use "element-plus/theme-chalk/src/index.scss" as *;
